@@ -1,0 +1,43 @@
+{# Calculate Days Left #}
+{% set due_date = must_have_date|date('d-m-Y') %}
+{% set today = "now"|date('d-m-Y') %}
+{% set difference = date(today).diff(date(due_date)) %}
+{% set leftDays = difference.days %}
+
+<main class="content-main">
+  <section class="content-secondary">
+    <div class="tab active">
+      <a class="tab__link" href="#">Status</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-dates/05-pages-dates.html">Dates</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">Financials</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">Project Details</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">General Notes</a></div>
+    <div class="add-tab">
+      <a href="#">Add a new section</a>
+    </div>
+  </section>
+  <section class="content-primary">
+    <div class="date">
+      <p class="date__label">Follow-up Date</p>
+      <p>2018-08-01</p><p>(Make this a variable)</p>
+    </div>
+    <div class="date">
+      <p class="date__label">Expected End Date</p>
+      <p>{{ must_have_date|date('M d Y') }}</p>
+    </div>
+    <div class="date">
+      <p class="date__label">Business Days Left</p>
+      {% if due_date == today %}
+        <p>Due Today!</p>
+      {% else %}
+        <p>{{ leftDays }} days</p>
+      {% endif %}
+    </div>
+  </section>
+</main>
