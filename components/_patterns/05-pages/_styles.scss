@@ -40,6 +40,10 @@
     background-color: $white;
     border-right: 0;
   }
+
+  &__link {
+    text-decoration: none;
+  }
 }
 
 .tab-edit {

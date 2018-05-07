@@ -1,0 +1,72 @@
+{% set must_have_date = '2018-12-01' %}
+
+{% set due_date = must_have_date|date('d-m-Y') %}
+{% set today = "now"|date('d-m-Y') %}
+{% set difference = date(today).diff(date(due_date)) %}
+{% set leftDays = difference.days %}
+
+<main class="content-main">
+  <section class="content-secondary">
+    <div class="tab">
+      <a class="tab__link" href="#">Status</a></div>
+    <div class="tab active">
+      <a class="tab__link" href="#">Dates</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">Financials</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">Project Details</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#">General Notes</a></div>
+    <div class="add-tab">
+      <a href="#">Add a new section</a>
+    </div>
+  </section>
+  <section class="content-primary">
+    <div class="date">
+      <p class="date__label">Date Assigned</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-01-07" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="date__label">Must Have Date</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ must_have_date }}" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="date__label">Pause Start</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-06-03" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="date__label">Pause End</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-07-07" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="date__label">Follow-up Date</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-08-01" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="date__label">Paused Days</p>
+      <p>34</p>
+    </div>
+    <div class="date">
+      <p class="date__label">Expected End Date</p>
+      <p>{{ must_have_date|date('M d Y') }}</p>
+    </div>
+    <div class="date">
+      <p class="date__label">Business Days Left</p>
+      {% if due_date == today %}
+        <p>Due Today!</p>
+      {% else %}
+        <p>{{ leftDays }} days</p>
+      {% endif %}
+    </div>
+    <div class="date">
+      <p class="date__label">Need to be paused</p>
+      <p>No</p>
+    </div>
+    <div class="add-field">
+      <a href="#">Add a new field</a>
+      {% include "@molecules/dropdown.twig" %}
+    </div>
+  </section>
+</main>
