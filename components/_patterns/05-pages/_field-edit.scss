@@ -1,4 +1,4 @@
-.field-edit {
+@mixin item-edit {
   position: relative;
   padding-left: $space-double;
   border-bottom: 1px solid $gray-lightest;
@@ -15,4 +15,8 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+.field-edit {
+  @include item-edit;
 }

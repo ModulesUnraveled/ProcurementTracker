@@ -42,6 +42,17 @@
   }
 }
 
+.tab-edit {
+  @include item-edit;
+
+  padding-left: $space-triple;
+
+  &::before {
+    color: $gray-light;
+    left: $space;
+  }
+}
+
 @mixin add-link {
   & a {
     text-decoration: none;
