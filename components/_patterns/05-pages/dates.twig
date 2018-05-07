@@ -1,5 +1,14 @@
 {% set must_have_date = '2018-12-01' %}
+{% set paused_start = '2018-06-03' %}
+{% set paused_end = '2018-07-07' %}
 
+{# Calculate Days paused #}
+{% set date_paused = paused_start|date('d-m-Y') %}
+{% set date_resumed = paused_end|date('d-m-Y') %}
+{% set paused_time = date(date_paused).diff(date(date_resumed)) %}
+{% set paused_days = paused_time.days %}
+
+{# Calculate Days Left #}
 {% set due_date = must_have_date|date('d-m-Y') %}
 {% set today = "now"|date('d-m-Y') %}
 {% set difference = date(today).diff(date(due_date)) %}
@@ -34,11 +43,11 @@
     </div>
     <div class="date">
       <p class="date__label">Pause Start</p>
-      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-06-03" size="12" required="required" aria-required="true">
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ paused_start }}" size="12" required="required" aria-required="true">
     </div>
     <div class="date">
       <p class="date__label">Pause End</p>
-      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-07-07" size="12" required="required" aria-required="true">
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ paused_end }}" size="12" required="required" aria-required="true">
     </div>
     <div class="date">
       <p class="date__label">Follow-up Date</p>
@@ -46,7 +55,7 @@
     </div>
     <div class="date">
       <p class="date__label">Paused Days</p>
-      <p>34</p>
+      <p>{{ paused_days }}</p>
     </div>
     <div class="date">
       <p class="date__label">Expected End Date</p>
