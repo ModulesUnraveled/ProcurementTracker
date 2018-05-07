@@ -20,3 +20,14 @@
 .field-edit {
   @include item-edit;
 }
+
+.tab-edit {
+  @include item-edit;
+
+  padding-left: $space-triple;
+
+  &::before {
+    color: $gray-light;
+    left: $space;
+  }
+}

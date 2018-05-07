@@ -46,17 +46,6 @@
   }
 }
 
-.tab-edit {
-  @include item-edit;
-
-  padding-left: $space-triple;
-
-  &::before {
-    color: $gray-light;
-    left: $space;
-  }
-}
-
 @mixin add-link {
   & a {
     text-decoration: none;
@@ -83,16 +72,16 @@
     margin-top: $space;
   }
 
-  &__label {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.1rem;
-  }
-
   &__content {
     border: 1px solid $gray-light;
     padding: $space;
   }
+}
+
+.field-label {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .add-field {
