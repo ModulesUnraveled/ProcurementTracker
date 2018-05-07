@@ -1,0 +1,22 @@
+.dropbutton {
+  list-style: none;
+  border-left: 2px solid $gray;
+  margin-left: $space-and-half;
+  padding-left: $space-one-half;
+}
+
+.dropbutton-action {
+  & + & {
+    margin-top: $space-one-fourth;
+  }
+}
+
+// .dropbutton-arrow {
+//   &::after {
+//     content: "^";
+//     font-weight: bold;
+//     // left: 5px;
+//     // position: absolute;
+//     // top: 12px;
+//   }
+// }
