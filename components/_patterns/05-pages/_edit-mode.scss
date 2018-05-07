@@ -21,13 +21,28 @@
   @include item-edit;
 }
 
-.tab-edit {
-  @include item-edit;
+.tab {
+  &.tab-edit {
+    @include item-edit;
 
-  padding-left: $space-triple;
+    padding-left: $space-triple;
 
-  &::before {
-    color: $gray-light;
-    left: $space;
+    &::before {
+      color: $gray-light;
+      left: $space;
+    }
+  }
+}
+
+.remove {
+  position: relative;
+
+  &::after {
+    content: "(-)";
+    display: block;
+    position: absolute;
+    right: $space;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
