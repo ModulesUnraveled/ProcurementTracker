@@ -1,0 +1,87 @@
+.content-main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  @include breakpoint($small) {
+    flex-direction: row;
+  }
+}
+
+.content-secondary {
+  @include breakpoint($small) {
+    flex: 1 1 24%;
+    margin-right: $space;
+  }
+}
+
+.content-primary {
+  @include breakpoint($small) {
+    flex: 1 1 75%;
+  }
+}
+
+.tab {
+  display: block;
+  background-color: $near-white;
+  border: 1px solid $gray-lightest;
+  border-bottom: none;
+  color: $gray;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: $space $space-and-half;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $gray-lightest;
+  }
+
+  &.active {
+    background-color: $white;
+    border-right: 0;
+  }
+}
+
+@mixin add-link {
+  & a {
+    text-decoration: none;
+  }
+
+  &::before {
+    content: "+";
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-right: $space-one-half;
+  }
+}
+
+.add-tab {
+  padding: $space $space-and-half;
+
+  @include add-link;
+}
+
+.text-area {
+  display: block;
+
+  & + & {
+    margin-top: $space;
+  }
+
+  &__label {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  &__content {
+    border: 1px solid $gray-lightest;
+    padding: $space;
+  }
+}
+
+.add-field {
+  padding: $space 0;
+
+  @include add-link;
+}

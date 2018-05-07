@@ -1,0 +1,15 @@
+$color-link: $gray-dark;
+$color-link--hover: $gray-darker;
+
+/// Link
+@mixin link {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link--hover;
+  }
+}
+
+.link {
+  @include link;
+}
