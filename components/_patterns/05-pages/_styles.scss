@@ -65,6 +65,12 @@
   @include add-link;
 }
 
+.section {
+  & + & {
+    margin-top: $space;
+  }
+}
+
 .text-area {
   display: block;
 
