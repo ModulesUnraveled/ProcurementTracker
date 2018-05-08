@@ -25,12 +25,16 @@
   display: block;
   background-color: $near-white;
   border: 1px solid $gray-lightest;
-  border-bottom: none;
+  border-top: none;
   color: $gray;
   font-size: 1.1rem;
   font-weight: 600;
   padding: $space $space-and-half;
   text-decoration: none;
+
+  &:first-child {
+    border-top: 1px solid $gray-lightest;
+  }
 
   &:hover {
     background-color: $gray-lightest;
