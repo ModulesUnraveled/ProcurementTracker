@@ -1,0 +1,101 @@
+<main class="content-main">
+  <section class="content-secondary">
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-status/05-pages-status.html">Status</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-dates/05-pages-dates.html">Dates</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-financials/05-pages-financials.html">Financials</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
+    <div class="tab active">
+      <a class="tab__link" href="#">Project Details</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-general-notes/05-pages-general-notes.html">General Notes</a></div>
+    <div class="add-tab">
+      <a href="#">Add a new section</a>
+    </div>
+  </section>
+  <section class="content-primary">
+    <div class="section">
+      <p class="field-label">Current Status</p>
+      <select>
+        <option value="reqgath">Requirements Gathering</option>
+        <option value="busapp">Business Approval</option>
+        <option value="legalrev">Legal Review</option>
+        <option value="legalstamp">Legal Stamp</option>
+        <option value="sig">Signature</option>
+        <option value="source">Sourcing</option>
+        <option value="neg" selected>Negotiations</option>
+        <option value="contfin">Contract Finalization</option>
+        <option value="complete">Completed</option>
+        <option value="paused">Paused</option>
+        <option value="canceled">Cancelled by Business</option>
+        <option value="rejected">Rejected by Procurement</option>
+        <option value="transferred">Transferred</option>
+      </select>
+    </div>
+    <div class="section">
+      <p class="field-label">Summary</p>
+      <textarea class="project-status">This is the status of the project. It's a high-level overview for people who just want to know what's going on at a glance.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Checks</p>
+      <div class="field-group group--status__checks">
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">ESRAP</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">SRMR</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">IRM</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">Legal OK</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">Disposition</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">Active</label>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <p class="field-label">Approvals</p>
+      <div class="field-group group--status__approvals">
+        <div class="section">
+          <p class="field-label">Cloud Governance</p>
+          <select>
+            <option value="chk">Checking</option>
+            <option value="ip">In Process</option>
+            <option value="ok" selected>Approved</option>
+            <option value="no">Declined</option>
+          </select>
+        </div>
+        <div class="section">
+          <p class="field-label">RFP Status</p>
+          <select>
+            <option value="ip">In Process</option>
+            <option value="complete" selected>Complete</option>
+            <option value="delayed">Delayed</option>
+            <option value="escalated">Escalated</option>
+            <option value="paused">Paused</option>
+            <option value="trouble">In Trouble</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
