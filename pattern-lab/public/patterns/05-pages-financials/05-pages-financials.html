@@ -29,15 +29,14 @@
   	<div class="visually-hidden">
   		<div id="tabs" class="tabs"></div>
   	</div>
-
 <main class="content-main">
   <section class="content-secondary">
-    <div class="tab active">
-      <a class="tab__link" href="#">Status</a></div>
+    <div class="tab">
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-status/05-pages-status.html">Status</a></div>
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-dates/05-pages-dates.html">Dates</a></div>
-    <div class="tab">
-      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-financials/05-pages-financials.html">Financials</a></div>
+    <div class="tab active">
+      <a class="tab__link" href="#">Financials</a></div>
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
     <div class="tab">
@@ -49,70 +48,72 @@
     </div>
   </section>
   <section class="content-primary">
-    <div class="section">
-      <h2>Important Dates</h2>
-      <div class="field-group group--status__dates">
-        <div class="date">
-          <p class="field-label">Follow-up Date</p>
-          <p>2018-08-01</p>
-        </div>
-        <div class="date">
-          <p class="field-label">Expected End Date</p>
-          <p>Dec 01 2018</p>
-        </div>
-        <div class="date">
-          <p class="field-label">Business Days Left</p>
-                      <p>207 days</p>
-                  </div>
-      </div>
+    <div class="financial">
+      <p class="field-label">Payment Terms</p>
+      <select>
+        <option value="std">STD</option>
+        <option value="altstd">ALT STD</option>
+        <option value="net60">60 NET</option>
+        <option value="net45">45 NET</option>
+        <option value="other">Other</option>
+      </select>
     </div>
-    <div class="section">
-      <p class="field-label">Current Status</p>
-      <p>Negotiations</p>
+    <div class="financial">
+      <p class="field-label">Payment Acception Status</p>
+      <select>
+        <option value="na">N/A</option>
+        <option value="need">Need</option>
+        <option value="req">Req</option>
+        <option value="rcvd">Rcvd</option>
+        <option value="reject">Reject</option>
+      </select>
     </div>
-    <h2>Summary</h2>
-    <div class="project-status">
-      <p>This is the status of the project. It's a high-level overview for people who just want to know what's going on at a glance.</p>
-      <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-      <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    <div class="financial">
+      <p class="field-label">Deal Sheet</p>
+      <select>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="ip">I P</option>
+        <option value="partial">Partial</option>
+      </select>
     </div>
-    <h2>Checks</h2>
-    <div class="field-group group--status__checks">
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding" checked>
-        <label for="coding">Cloud Gov</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding" checked>
-        <label for="coding">ESRAP</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding">
-        <label for="coding">SRMR</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding">
-        <label for="coding">IRM</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding" checked>
-        <label for="coding">Legal OK</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding">
-        <label for="coding">Disposition</label>
-      </div>
-      <div class="check">
-        <input type="checkbox" id="coding" name="interest" value="coding" checked>
-        <label for="coding">Active</label>
-      </div>
+    <div class="financial">
+      <p class="field-label">Savings %</p>
+      <p>10%</p>
+    </div>
+    <div class="add-field">
+      <a href="#">Add a new field</a>
+      <div class="dropbutton-wrapper dropbutton-multiple">
+   <div class="dropbutton-widget">
+      <ul class="dropbutton">
+        <li class="dropbutton-action">
+          <input class="button" type="submit" value="Add Text">
+        </li>
+        <li class="dropbutton-action secondary-action">
+          <input class="button" type="submit" value="Add Link">
+        </li>
+        <li class="dropbutton-action secondary-action">
+          <input class="button" type="submit" value="Add Document">
+        </li>
+        <li class="dropbutton-action secondary-action">
+          <input class="button" type="submit" value="Add Phone Number">
+        </li>
+        <li class="dropbutton-action secondary-action">
+          <input class="button" type="submit" value="Add Email">
+        </li>
+        <li class="dropbutton-action secondary-action">
+          <input class="button" type="submit" value="Add Date">
+        </li>
+      </ul>
+   </div>
+</div>
     </div>
   </section>
 </main>
 
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[],"lineageR":[],"patternBreadcrumb":{"patternType":"pages"},"patternDesc":"","patternExtension":"twig","patternName":"status","patternPartial":"pages-status","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"molecules-dropdown","lineagePath":"..\/..\/patterns\/05-pages-financials\/05-pages-financials.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"pages"},"patternDesc":"","patternExtension":"twig","patternName":"financials","patternPartial":"pages-financials","patternState":"","extraOutput":[]}
 </script>
 
 <script>
