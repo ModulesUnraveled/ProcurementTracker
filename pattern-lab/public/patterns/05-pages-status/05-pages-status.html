@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Pattern Lab base styles -->
-    <link rel="stylesheet" href="../../css/style.css?1525733280" media="all" />
-    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1525733280" media="all" />
+    <link rel="stylesheet" href="../../css/style.css?1525794163" media="all" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?1525794163" media="all" />
     <!-- Component styles -->
-    <link rel="stylesheet" href="../../../../dist/style.css?1525733280" media="all" />
+    <link rel="stylesheet" href="../../../../dist/style.css?1525794163" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -19,8 +19,8 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1525733280" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1525733280" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1525794163" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1525794163" media="all" />
     <!-- End Pattern Lab -->
 
   </head>
@@ -37,7 +37,7 @@
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-dates/05-pages-dates.html">Dates</a></div>
     <div class="tab">
-      <a class="tab__link" href="#">Financials</a></div>
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-financials/05-pages-financials.html">Financials</a></div>
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
     <div class="tab">
@@ -49,26 +49,77 @@
     </div>
   </section>
   <section class="content-primary">
-    <h2>Important Dates</h2>
-    <div class="field-group group--status__dates">
-      <div class="date">
-        <p class="field-label">Follow-up Date</p>
-        <p>2018-08-01</p>
+    <div class="section">
+      <h2>Important Dates</h2>
+      <div class="field-group group--status__dates">
+        <div class="date">
+          <p class="field-label">Follow-up Date</p>
+          <p>2018-08-01</p>
+        </div>
+        <div class="date">
+          <p class="field-label">Expected End Date</p>
+          <p>Dec 01 2018</p>
+        </div>
+        <div class="date">
+          <p class="field-label">Business Days Left</p>
+                      <p>207 days</p>
+                  </div>
       </div>
-      <div class="date">
-        <p class="field-label">Expected End Date</p>
-        <p>Dec 01 2018</p>
-      </div>
-      <div class="date">
-        <p class="field-label">Business Days Left</p>
-                  <p>208 days</p>
-              </div>
     </div>
-    <h2>Current Status</h2>
+    <div class="section">
+      <p class="field-label">Current Status</p>
+      <select>
+        <option value="na">Requirements Gathering</option>
+        <option value="need">Business Approval</option>
+        <option value="req">Legal Review</option>
+        <option value="rcvd">Legal Stamp</option>
+        <option value="reject">Signature</option>
+        <option value="reject">Sourcing</option>
+        <option value="reject">Negotiations</option>
+        <option value="reject">Contract Finalization</option>
+        <option value="reject">Completed</option>
+        <option value="reject">Paused</option>
+        <option value="reject">Cancelled by Business</option>
+        <option value="reject">Rejected by Procurement</option>
+        <option value="reject">Transferred</option>
+      </select>
+    </div>
+    <h2>Summary</h2>
     <div class="project-status">
       <p>This is the status of the project. It's a high-level overview for people who just want to know what's going on at a glance.</p>
       <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
       <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+    <h2>Checks</h2>
+    <div class="field-group group--status__checks">
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Cloud Gov</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">ESRAP</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">SRMR</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">IRM</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Legal OK</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">Disposition</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Active</label>
+      </div>
     </div>
   </section>
 </main>
@@ -109,10 +160,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1525733280">
+<script id="pl-js-polyfill-insert-1525794163">
   (function() {
     if (self != top) {
-      var cb = '1525733280';
+      var cb = '1525794163';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -122,10 +173,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1525733280">
+<script id="pl-js-insert-1525794163">
   (function() {
     if (self != top) {
-      var cb = '1525733280';
+      var cb = '1525794163';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

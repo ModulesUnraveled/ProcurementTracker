@@ -11,7 +11,7 @@
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-dates/05-pages-dates.html">Dates</a></div>
     <div class="tab">
-      <a class="tab__link" href="#">Financials</a></div>
+      <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-financials/05-pages-financials.html">Financials</a></div>
     <div class="tab">
       <a class="tab__link" href="/pattern-lab/public/patterns/05-pages-contacts/05-pages-contacts.html">Contacts</a></div>
     <div class="tab">
@@ -23,30 +23,81 @@
     </div>
   </section>
   <section class="content-primary">
-    <h2>Important Dates</h2>
-    <div class="field-group group--status__dates">
-      <div class="date">
-        <p class="field-label">Follow-up Date</p>
-        <p>{{ follow_up_date }}</p>
-      </div>
-      <div class="date">
-        <p class="field-label">Expected End Date</p>
-        <p>{{ must_have_date|date('M d Y') }}</p>
-      </div>
-      <div class="date">
-        <p class="field-label">Business Days Left</p>
-        {% if due_date == today %}
-          <p>Due Today!</p>
-        {% else %}
-          <p>{{ daysLeft }} days</p>
-        {% endif %}
+    <div class="section">
+      <h2>Important Dates</h2>
+      <div class="field-group group--status__dates">
+        <div class="date">
+          <p class="field-label">Follow-up Date</p>
+          <p>{{ follow_up_date }}</p>
+        </div>
+        <div class="date">
+          <p class="field-label">Expected End Date</p>
+          <p>{{ must_have_date|date('M d Y') }}</p>
+        </div>
+        <div class="date">
+          <p class="field-label">Business Days Left</p>
+          {% if due_date == today %}
+            <p>Due Today!</p>
+          {% else %}
+            <p>{{ daysLeft }} days</p>
+          {% endif %}
+        </div>
       </div>
     </div>
-    <h2>Current Status</h2>
+    <div class="section">
+      <p class="field-label">Current Status</p>
+      <select>
+        <option value="na">Requirements Gathering</option>
+        <option value="need">Business Approval</option>
+        <option value="req">Legal Review</option>
+        <option value="rcvd">Legal Stamp</option>
+        <option value="reject">Signature</option>
+        <option value="reject">Sourcing</option>
+        <option value="reject">Negotiations</option>
+        <option value="reject">Contract Finalization</option>
+        <option value="reject">Completed</option>
+        <option value="reject">Paused</option>
+        <option value="reject">Cancelled by Business</option>
+        <option value="reject">Rejected by Procurement</option>
+        <option value="reject">Transferred</option>
+      </select>
+    </div>
+    <h2>Summary</h2>
     <div class="project-status">
       <p>This is the status of the project. It's a high-level overview for people who just want to know what's going on at a glance.</p>
       <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
       <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+    <h2>Checks</h2>
+    <div class="field-group group--status__checks">
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Cloud Gov</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">ESRAP</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">SRMR</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">IRM</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Legal OK</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding">
+        <label for="coding">Disposition</label>
+      </div>
+      <div class="check">
+        <input type="checkbox" id="coding" name="interest" value="coding" checked>
+        <label for="coding">Active</label>
+      </div>
     </div>
   </section>
 </main>
