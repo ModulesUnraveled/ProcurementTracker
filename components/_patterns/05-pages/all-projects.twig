@@ -1,0 +1,275 @@
+{# Calculate Days paused #}
+{% set date_paused = paused_start|date('d-m-Y') %}
+{% set date_resumed = paused_end|date('d-m-Y') %}
+{% set paused_time = date(date_paused).diff(date(date_resumed)) %}
+{% set paused_days = paused_time.days %}
+
+{# Calculate Days Left #}
+{% set due_date = must_have_date|date('d-m-Y') %}
+{% set today = "now"|date('d-m-Y') %}
+{% set difference = date(today).diff(date(due_date)) %}
+{% set daysLeft = difference.days %}
+
+<main class="content-main">
+  <section class="project-menu" style="position: fixed;">
+    <input class="search" type="text" placeholder="Search">
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #1</a></div>
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #2</a></div>
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #3</a></div>
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #4</a></div>
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #5</a></div>
+    <div class="tab menu">
+      <a class="tab__link" href="#">Project #6</a></div>
+    <div class="add-tab">
+      <a href="#">Add a new project</a>
+    </div>
+  </section>
+  <section class="content-secondary" style="position: fixed; margin-left: 210px;">
+    <div class="tab">
+      <a class="tab__link" href="#">Status</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#dates">Dates</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#financials">Financials</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#contacts">Contacts</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#project-details">Project Details</a></div>
+    <div class="tab">
+      <a class="tab__link" href="#general-notes">General Notes</a></div>
+    <div class="add-tab">
+      <a href="#">Add a new section</a>
+    </div>
+  </section>
+  <section class="content-primary" style="margin-left: 420px;">
+    <span id="dates"></span>
+    <div class="date">
+      <p class="field-label">Date Assigned</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="2018-01-07" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="field-label">Must Have Date</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ must_have_date }}" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="field-label">Pause Start</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ paused_start }}" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="field-label">Pause End</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ paused_end }}" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="field-label">Follow-up Date</p>
+      <input class="form-date" type="date" min="1900-01-01" max="2050-12-31" value="{{ follow_up_date }}" size="12" required="required" aria-required="true">
+    </div>
+    <div class="date">
+      <p class="field-label">Paused Days</p>
+      <p>{{ paused_days }}</p>
+    </div>
+    <div class="date">
+      <p class="field-label">Expected End Date</p>
+      <p>{{ must_have_date|date('M d Y') }}</p>
+    </div>
+    <div class="date">
+      <p class="field-label">Business Days Left</p>
+      {% if due_date == today %}
+        <p>Due Today!</p>
+      {% else %}
+        <p>{{ daysLeft }} days</p>
+      {% endif %}
+    </div>
+    <div class="date">
+      <p class="field-label">Need to be paused</p>
+      <p>No</p>
+    </div>
+    <span id="financials"></span>
+    <div class="financial">
+      <p class="field-label">Payment Terms</p>
+      <select>
+        <option value="std">STD</option>
+        <option value="altstd">ALT STD</option>
+        <option value="net60">60 NET</option>
+        <option value="net45">45 NET</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="financial">
+      <p class="field-label">Payment Acception Status</p>
+      <select>
+        <option value="na">N/A</option>
+        <option value="need">Need</option>
+        <option value="req">Req</option>
+        <option value="rcvd">Rcvd</option>
+        <option value="reject">Reject</option>
+      </select>
+    </div>
+    <div class="financial">
+      <p class="field-label">Deal Sheet</p>
+      <select>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+        <option value="ip">I P</option>
+        <option value="partial">Partial</option>
+      </select>
+    </div>
+    <div class="financial">
+      <p class="field-label">Savings %</p>
+      <p>10%</p>
+    </div>
+    <span id="contacts"></span>
+    <div class="text-area">
+      <p class="field-label">Supplier</p>
+      <div class="text-area__content">Awesome Supplier</div>
+    </div>
+    <div class="text-area">
+      <p class="field-label">Supplier Contact</p>
+      <div class="text-area__content">(123) 456-7890</div>
+    </div>
+    <div class="text-area">
+      <p class="field-label">Supplier Signature</p>
+      <div class="text-area__content">
+        <a href="#">Link to signature document</a>
+      </div>
+    </div>
+    <div class="text-area">
+      <p class="field-label">T-Mobile</p>
+      <div class="text-area__content">Text area</div>
+    </div>
+    <span id="project-details"></span>
+    <div class="section">
+      <p class="field-label">Project Name</p>
+      <input type="text" name="firstname" value="{{ project_name }}">
+    </div>
+    <div class="section">
+      <p class="field-label">Purpose</p>
+      <textarea>To save people money.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Approval Value</p>
+      <input type="text" name="firstname" value="{{ approval_value }}">
+    </div>
+    <div class="section">
+      <p class="field-label">SLA</p>
+      <input type="text" name="firstname" value="Yes">
+    </div>
+    <div class="section">
+      <p class="field-label">TPE</p>
+      <input type="text" name="firstname" value="Sure">
+    </div>
+    <div class="section">
+      <p class="field-label">Current Status</p>
+      <select>
+        <option value="reqgath">Requirements Gathering</option>
+        <option value="busapp">Business Approval</option>
+        <option value="legalrev">Legal Review</option>
+        <option value="legalstamp">Legal Stamp</option>
+        <option value="sig">Signature</option>
+        <option value="source">Sourcing</option>
+        <option value="neg" selected>Negotiations</option>
+        <option value="contfin">Contract Finalization</option>
+        <option value="complete">Completed</option>
+        <option value="paused">Paused</option>
+        <option value="canceled">Cancelled by Business</option>
+        <option value="rejected">Rejected by Procurement</option>
+        <option value="transferred">Transferred</option>
+      </select>
+    </div>
+    <div class="section">
+      <p class="field-label">Summary</p>
+      <textarea class="project-status">This is the status of the project. It's a high-level overview for people who just want to know what's going on at a glance.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Checks</p>
+      <div class="field-group group--status__checks">
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">ESRAP</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">SRMR</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">IRM</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">Legal OK</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding">
+          <label for="coding">Disposition</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="coding" name="interest" value="coding" checked>
+          <label for="coding">Active</label>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <p class="field-label">Approvals</p>
+      <div class="field-group group--status__approvals">
+        <div class="section">
+          <p class="field-label">Cloud Governance</p>
+          <select>
+            <option value="chk">Checking</option>
+            <option value="ip">In Process</option>
+            <option value="ok" selected>Approved</option>
+            <option value="no">Declined</option>
+          </select>
+        </div>
+        <div class="section">
+          <p class="field-label">RFP Status</p>
+          <select>
+            <option value="ip">In Process</option>
+            <option value="complete" selected>Complete</option>
+            <option value="delayed">Delayed</option>
+            <option value="escalated">Escalated</option>
+            <option value="paused">Paused</option>
+            <option value="trouble">In Trouble</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <span id="general-notes"></span>
+    <div class="section">
+      <p class="field-label">Notes for me</p>
+      <textarea class="project-status">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Notes form meeting 3/24/18</p>
+      <textarea class="project-status">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Notes from phone call 3/29/18</p>
+      <textarea class="project-status">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+    </div>
+    <div class="section">
+      <p class="field-label">Random Stuff</p>
+      <textarea class="project-status">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</textarea>
+    </div>
+    <div class="add-field">
+      <a href="#">Add a new field</a>
+      {% include "@molecules/dropdown.twig" %}
+    </div>
+  </section>
+</main>

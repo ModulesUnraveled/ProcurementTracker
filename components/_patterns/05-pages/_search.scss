@@ -1,0 +1,13 @@
+.search {
+  width: 195px;
+  background-color: $gray-lightest;
+  border: 1px solid $gray-lightest;
+  color: $gray;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: $space 0 $space $space-and-half;
+}
+
+::placeholder {
+  color: $gray;
+}
